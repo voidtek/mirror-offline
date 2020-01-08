@@ -2,11 +2,10 @@ version: '3'
 
 services:
     mirror-offline:
-        # image: mirror-offline:latest
         build: ./mirror-offline-docker
+        image: mirror-offline:latest
         environment:
-            - PLUGIN_WEBSITE=http://google.com/
-            - PLUGIN_FOLDER=google.com
+            - PLUGIN_WEBSITE=https://google.com
         ports:
             - 80:80
             - 443:443
