@@ -1,18 +1,21 @@
 version: '3'
 
 services:
-    mirror-offline:
-        build: ./mirror-offline-docker
-        image: mirror-offline:latest
+    wget-mirror-health:
+        build: ./mirror-offline
+        image: wget-offline
         environment:
-            - PLUGIN_WEBSITE=https://google.com/
+            - PLUGIN_WEBSITE=https://www.google.com
             - PLUGIN_USER=
             - PLUGIN_PASSWORD=
-            - PLUGIN_FOLDER=google.com
-            - PLUGIN_PATH=/
             - PLUGIN_MIRROR=http://localhost/
         volumes:
-            - "./html:/tmp"
+            - ./html:/tmp
+    nginx:
+        build: ./nginx
+        image: nginx-website
+        volumes:
+            - ./html:/usr/share/nginx/html
         ports:
             - 80:80
             - 443:443
