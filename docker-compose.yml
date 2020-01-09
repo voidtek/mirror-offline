@@ -6,7 +6,16 @@ services:
         image: mirror-offline:latest
         environment:
             - PLUGIN_WEBSITE=https://google.com/
+            - PLUGIN_USER=
+            - PLUGIN_PASSWORD=
             - PLUGIN_FOLDER=google.com
+            - PLUGIN_PATH=/
+            - PLUGIN_MIRROR=http://localhost/
+        volumes:
+            - "./html:/tmp"
         ports:
             - 80:80
             - 443:443
+volumes:
+    html:
+        driver: local

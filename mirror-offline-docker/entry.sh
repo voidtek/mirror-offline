@@ -11,10 +11,7 @@
 set -e
 set -o pipefail
 
-if [ "${PLUGIN_WEBSITE}" == "" ]; then
-    echo "> Website is empty !"
-    exit 5
-fi
-
 exec /mirror.sh &
+
+ln -s /tmp/${PLUGIN_FOLDER} /usr/share/nginx/site
 exec nginx -g "daemon off;"
