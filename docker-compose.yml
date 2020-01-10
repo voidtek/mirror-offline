@@ -15,7 +15,7 @@ services:
         build: ./nginx
         image: nginx-website
         volumes:
-            - ./html:/usr/share/nginx/html
+            - ./html/www.google.com:/usr/share/nginx/html
         ports:
             - 80:80
             - 443:443
