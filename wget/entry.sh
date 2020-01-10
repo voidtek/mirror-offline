@@ -3,8 +3,8 @@
 # Parameters :
 #
 # pipeline:
-#   offline-mirror:
-#     image: fpfis/drone-offline-mirror
+#   wget-website:
+#     image: wget-website
 #     WEBSITE:
 #     MIRROR:
 #     USER:

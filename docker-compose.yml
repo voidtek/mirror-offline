@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-    wget-mirror-health:
-        build: ./mirror-offline
-        image: wget-offline
+    wget:
+        build: ./wget
+        image: wget-website
         environment:
             - PLUGIN_WEBSITE=https://www.google.com
             - PLUGIN_USER=

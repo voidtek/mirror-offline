@@ -18,5 +18,5 @@ $ docker-compose up
 
 Helping cmd
 ```
-$ docker run -it -e PLUGIN_WEBSITE="http://www.google.com" -v html:/tmp wget-offline:latest
+$ docker run -it -e PLUGIN_WEBSITE="http://www.google.com" -v html:/tmp wget-website:latest
 ```
