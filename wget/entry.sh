@@ -14,16 +14,17 @@
 set -e
 set -o pipefail
 
-wget -P /tmp \
+wget \
+    --directory-prefix=/tmp \
     --mirror \
     --page-requisites \
     --no-parent \
     --html-extension \
-    --no-timestamping \
-    -U Mozilla \
-    -e robots=off \
-    --continue \
+    --user-agent=Mozilla \
+    --execute robots=off \
     --restrict-file-names=windows \
+    --random-wait \
+    --continue \
     --user=${PLUGIN_USER} \
     --password=${PLUGIN_PASSWORD} \
     ${PLUGIN_WEBSITE}
