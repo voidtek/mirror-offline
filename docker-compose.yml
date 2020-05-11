@@ -5,17 +5,17 @@ services:
         build: ./wget
         image: wget-website
         environment:
-            - PLUGIN_WEBSITE=https://www.google.com
+            - PLUGIN_WEBSITE=https://google.com
             - PLUGIN_USER=
             - PLUGIN_PASSWORD=
-            - PLUGIN_MIRROR=http://localhost/
+            - PLUGIN_MIRROR=/
         volumes:
             - ./html:/tmp
     nginx:
         build: ./nginx
         image: nginx-website
         volumes:
-            - ./html/www.google.com:/usr/share/nginx/html
+            - ./html/google.com:/usr/share/nginx/html
         ports:
             - 80:80
             - 443:443

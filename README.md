@@ -18,5 +18,11 @@ $ docker-compose up
 
 Helping cmd
 ```
-$ docker run -it -e PLUGIN_WEBSITE="http://www.google.com" -v html:/tmp wget-website:latest
+$ docker run \
+    -e PLUGIN_WEBSITE="https://www.google.com" \
+    -e PLUGIN_USER="" \
+    -e PLUGIN_PASSWORD="" \
+    -e PLUGIN_MIRROR="http://localhost/" \
+    -v "html:/tmp" \
+    wget-website:latest
 ```
